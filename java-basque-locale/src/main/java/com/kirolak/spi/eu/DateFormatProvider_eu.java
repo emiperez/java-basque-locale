@@ -43,18 +43,7 @@ public class DateFormatProvider_eu extends DateFormatProvider {
 	
 	private DateFormat getDateFormat(String format)
 	{
-		SimpleDateFormat dateformat = new SimpleDateFormat(format);
-		DateFormatSymbols symbols = new DateFormatSymbols();
-        String[] newMonths = {"urtarrila", "otsaila", "martxoa", "apirila", "maiatza", "ekaina", "uztaila", "abuztua", "iraila","urria", "azaroa", "abendua"};
-        String[] newShortMonths = {"urt", "ots", "mar", "api", "mai", "eka", "uzt", "abu", "ira","urr", "aza", "abe"};
-        String[] newShortWeekdays = {"leh", "art", "azk", "oeg", "oir", "lar", "iga"};
-        String[] newWeekdays = {"astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata", "igandea"};
-        symbols.setMonths(newMonths);
-                    
-        symbols.setShortMonths(newShortMonths);
-        symbols.setShortWeekdays(newShortWeekdays);
-        symbols.setWeekdays(newWeekdays);
-        dateformat.setDateFormatSymbols(symbols);
+		SimpleDateFormat dateformat = new SimpleDateFormat(format,basque);
 		return dateformat;
 	}
 	
