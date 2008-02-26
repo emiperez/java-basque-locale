@@ -12,7 +12,7 @@ public class DateFormatProvider_eu extends DateFormatProvider {
 	{
 		switch (style) {
 			case DateFormat.SHORT:
-				return "MM/dd";
+				return "yyyy/MM/dd";
 			case DateFormat.MEDIUM:
 				return "yyyy/MM/dd";
 			case DateFormat.LONG:
