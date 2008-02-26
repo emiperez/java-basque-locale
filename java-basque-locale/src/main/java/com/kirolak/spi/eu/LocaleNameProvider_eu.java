@@ -14,8 +14,7 @@ public class LocaleNameProvider_eu extends LocaleNameProvider {
 	public String getDisplayCountry(String countryCode, Locale locale) {
 		if (locale.getLanguage().equals(basque.getLanguage()))
 		{
-			return getCountryName(countryCode);
-			
+			return getCountryName(countryCode);			
 		}
 		return null;
 	}
@@ -39,11 +38,15 @@ public class LocaleNameProvider_eu extends LocaleNameProvider {
 				InputStream is = getClass().getResourceAsStream("languages.properties");
 				this.languages = new Properties();
 				this.languages.load(is);
-				returnValue = this.languages.getProperty(languageCode);
+				is.close();
 			}
 			catch (Exception e) {
 				// TODO: handle exception
 			}
+		}
+		if(this.languages != null)
+		{
+			returnValue = this.languages.getProperty(languageCode);
 		}
 		if(returnValue.equals(""))
 		{
@@ -61,11 +64,15 @@ public class LocaleNameProvider_eu extends LocaleNameProvider {
 				InputStream is = getClass().getResourceAsStream("countries.properties");
 				this.countries = new Properties();
 				this.countries.load(is);
-				returnValue = this.countries.getProperty(countryCode);
+				is.close();
 			}
 			catch (Exception e) {
 				// TODO: handle exception
 			}
+		}
+		if(this.countries != null)
+		{
+			returnValue = this.countries.getProperty(countryCode);
 		}
 		if(returnValue.equals(""))
 		{

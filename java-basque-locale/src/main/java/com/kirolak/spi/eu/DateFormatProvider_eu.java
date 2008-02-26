@@ -14,7 +14,7 @@ public class DateFormatProvider_eu extends DateFormatProvider {
 			case DateFormat.SHORT:
 				return "yyyy/MM/dd";
 			case DateFormat.MEDIUM:
-				return "yyyy/MM/dd";
+				return "EEEE, MMMM'k' d";
 			case DateFormat.LONG:
 				return "yyyy'ko' MMMM'ren' d'a'";
 			case DateFormat.FULL:
