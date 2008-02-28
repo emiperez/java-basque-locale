@@ -1,0 +1,45 @@
+#labels Featured
+Example of use of Java Basque Locale
+
+{{{
+import java.text.DateFormat;
+import java.text.SimpleDateFormat;
+import java.util.Date;
+import java.util.Locale;
+
+public class BasqueLocaleTest {
+	
+	public static void main(String[] args) {
+		Locale basqueLocale = new Locale("eu","ES");
+		Locale germanLocale = new Locale("de","DE");
+		System.out.println("Spain in German: "+basqueLocale.getDisplayCountry(germanLocale));
+		System.out.println("Germany in Basque: "+germanLocale.getDisplayCountry(basqueLocale));
+		System.out.println("Spain in Basque: "+basqueLocale.getDisplayCountry(basqueLocale));
+		System.out.println("Basque in German: "+basqueLocale.getDisplayLanguage(germanLocale));
+		System.out.println("German in Basque: "+germanLocale.getDisplayLanguage(basqueLocale));
+		System.out.println("Basque in Basque: "+basqueLocale.getDisplayLanguage(basqueLocale));
+		Date date = new Date();
+		SimpleDateFormat formatter = new SimpleDateFormat("MMMM",basqueLocale);
+		System.out.println("Month: "+formatter.format(date));
+		System.out.println("Today SHORT: "+DateFormat.getDateInstance(DateFormat.SHORT,basqueLocale).format(new Date()));
+		System.out.println("Today MEDIUM: "+DateFormat.getDateInstance(DateFormat.MEDIUM,basqueLocale).format(new Date()));
+		System.out.println("Today LONG: "+DateFormat.getDateInstance(DateFormat.LONG,basqueLocale).format(new Date()));
+		System.out.println("Today FULL: "+DateFormat.getDateInstance(DateFormat.FULL,basqueLocale).format(new Date()));
+	}
+}
+}}}
+
+Result:
+{{{
+Spain in German: Spanien
+Germany in Basque: Alemania
+Spain in Basque: Espainia
+Basque in German: Baskisch
+German in Basque: Alemana
+Basque in Basque: Euskara
+Month: otsaila
+Today SHORT: 2008/02/26
+Today MEDIUM: osteguna, otsailak 26
+Today LONG: 2008ko otsailaren 26a
+Today FULL: osteguna, 2008ko otsailaren 26a
+}}}
