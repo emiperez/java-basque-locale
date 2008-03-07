@@ -19,8 +19,8 @@ public class DateFormatSymbolsProvider_eu extends DateFormatSymbolsProvider {
             DateFormatSymbols df = new DateFormatSymbols();
             String[] newMonths = {"urtarrila", "otsaila", "martxoa", "apirila", "maiatza", "ekaina", "uztaila", "abuztua", "iraila","urria", "azaroa", "abendua"};
             String[] newShortMonths = {"urt", "ots", "mar", "api", "mai", "eka", "uzt", "abu", "ira","urr", "aza", "abe"};
-            String[] newShortWeekdays = {"leh", "art", "azk", "oeg", "oir", "lar", "iga"};
-            String[] newWeekdays = {"astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata", "igandea"};
+            String[] newShortWeekdays = {"", "iga", "leh", "art", "azk", "oeg", "oir", "lar"};
+            String[] newWeekdays = {"", "igandea", "astelehena", "asteartea", "asteazkena", "osteguna", "ostirala", "larunbata"};
             df.setMonths(newMonths);
                         
             df.setShortMonths(newShortMonths);
