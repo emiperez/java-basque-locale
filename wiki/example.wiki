@@ -11,12 +11,18 @@ public class BasqueLocaleTest {
 	
 		Locale basqueLocale = new Locale("eu","ES");
 		Locale germanLocale = new Locale("de","DE");
+		
+		//Country Names
 		System.out.println("Spain in German: "+basqueLocale.getDisplayCountry(germanLocale));
 		System.out.println("Germany in Basque: "+germanLocale.getDisplayCountry(basqueLocale));
 		System.out.println("Spain in Basque: "+basqueLocale.getDisplayCountry(basqueLocale));
+		
+		//Language Names
 		System.out.println("Basque in German: "+basqueLocale.getDisplayLanguage(germanLocale));
 		System.out.println("German in Basque: "+germanLocale.getDisplayLanguage(basqueLocale));
 		System.out.println("Basque in Basque: "+basqueLocale.getDisplayLanguage(basqueLocale));
+		
+		//Date Format
 		Date date = new Date();
 		SimpleDateFormat formatter = new SimpleDateFormat("MMMM",basqueLocale);
 		System.out.println("Month: "+formatter.format(date));
@@ -24,6 +30,24 @@ public class BasqueLocaleTest {
 		System.out.println("Today MEDIUM: "+DateFormat.getDateInstance(DateFormat.MEDIUM,basqueLocale).format(date));
 		System.out.println("Today LONG: "+DateFormat.getDateInstance(DateFormat.LONG,basqueLocale).format(date));
 		System.out.println("Today FULL: "+DateFormat.getDateInstance(DateFormat.FULL,basqueLocale).format(date));
+		
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(date);
+		System.out.println("NEXT WEEK:");
+		for(int n= 0; n < 7; n++)
+		{
+			cal.add(Calendar.DAY_OF_YEAR, 1);
+			date = cal.getTime();
+			System.out.println(DateFormat.getDateInstance(DateFormat.FULL,basqueLocale).format(date));
+		}
+
+		System.out.println("NEXT MONTHS:");
+		for(int n= 0; n < 12; n++)
+		{
+			cal.add(Calendar.MONTH, 1);
+			date = cal.getTime();
+			System.out.println(DateFormat.getDateInstance(DateFormat.FULL,basqueLocale).format(date));
+		}
 	}
 }
 }}}
@@ -37,8 +61,29 @@ Basque in German: Baskisch
 German in Basque: Alemana
 Basque in Basque: Euskara
 Month: martxoa
-Today SHORT: 2008/03/07
-Today MEDIUM: ostirala, martxoak 7
-Today LONG: 2008ko martxoaren 7a
-Today FULL: ostirala, 2008ko martxoaren 7a
+Today SHORT: 2008/03/08
+Today MEDIUM: larunbata, martxoak 8
+Today LONG: 2008ko martxoaren 8a
+Today FULL: larunbata, 2008ko martxoaren 8a
+NEXT WEEK:
+igandea, 2008ko martxoaren 9a
+astelehena, 2008ko martxoaren 10a
+asteartea, 2008ko martxoaren 11a
+asteazkena, 2008ko martxoaren 12a
+osteguna, 2008ko martxoaren 13a
+ostirala, 2008ko martxoaren 14a
+larunbata, 2008ko martxoaren 15a
+NEXT MONTHS:
+asteartea, 2008ko apirilaren 15a
+osteguna, 2008ko maiatzaren 15a
+igandea, 2008ko ekainaren 15a
+asteartea, 2008ko uztailaren 15a
+ostirala, 2008ko abuztuaren 15a
+astelehena, 2008ko irailaren 15a
+asteazkena, 2008ko urriaren 15a
+larunbata, 2008ko azaroaren 15a
+astelehena, 2008ko abenduaren 15a
+osteguna, 2009ko urtarrilaren 15a
+igandea, 2009ko otsailaren 15a
+igandea, 2009ko martxoaren 15a
 }}}
