@@ -12,9 +12,9 @@ public class DateFormatProvider_eu extends DateFormatProvider {
 	{
 		switch (style) {
 			case DateFormat.SHORT:
-				return "yyyy/MM/dd";
+				return "yy/MM/dd";
 			case DateFormat.MEDIUM:
-				return "EEEE, MMMM'k' d";
+				return "yyyy-MMM-dd";
 			case DateFormat.LONG:
 				return "yyyy'ko' MMMM'ren' d'a'";
 			case DateFormat.FULL:
@@ -30,11 +30,11 @@ public class DateFormatProvider_eu extends DateFormatProvider {
 			case DateFormat.SHORT:
 				return "HH:mm";
 			case DateFormat.MEDIUM:
-				return "HH:mm";
+				return "HH:mm:ss";
 			case DateFormat.LONG:
-				return "HH:mm:ss";
+				return "HH:mm:ss z";
 			case DateFormat.FULL:
-				return "HH:mm:ss";
+				return "HH:mm:ss z";
 			default:
 				return "HH:mm";
 		} 
