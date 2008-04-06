@@ -4,7 +4,7 @@
   <groupId>com.kirolak.spi.eu</groupId>
   <artifactId>java-basque-locale</artifactId>
   <packaging>jar</packaging>
-  <version>0.6</version>
+  <version>0.7</version>
   <name>java-basque-locale</name>
   <url>http://maven.apache.org</url>
   <dependencies>
